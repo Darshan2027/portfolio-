@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Darshan C S | Python Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F6FB;--surface:#fff;--ink:#14213D;--muted:#55627d;--line:#d6deec;--accent:#2F5BEA;--ok:#12805c;--bad:#c93b3b;--okbg:#dcf3ea;--badbg:#fbe3e3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1526;--surface:#162038;--ink:#e9eefb;--muted:#9fb0d0;--line:#2a3757;--accent:#7b9bff;--ok:#4cd6a2;--bad:#ff8080;--okbg:#12362c;--badbg:#3e1d24}}
+:root[data-theme="dark"]{--bg:#0e1526;--surface:#162038;--ink:#e9eefb;--muted:#9fb0d0;--line:#2a3757;--accent:#7b9bff;--ok:#4cd6a2;--bad:#ff8080;--okbg:#12362c;--badbg:#3e1d24}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "DM Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+nav{display:flex;gap:20px;justify-content:space-between;align-items:center;padding:20px 0;flex-wrap:wrap}
+nav div{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-weight:500}
+nav a:hover{color:var(--ink)}
+button{font:inherit;cursor:pointer}
+.theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:4px 14px}
+.hero{padding:56px 0 40px}
+.hero h1{font-size:clamp(3rem,10vw,6.2rem);font-weight:800;letter-spacing:-.03em}
+.hero h1 span{display:block;font-size:.42em;font-weight:500;color:var(--accent);letter-spacing:-.01em;margin-top:14px}
+.hero p{max-width:60ch;color:var(--muted);font-size:1.15rem;margin:22px 0 0}
+.cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+.btn.alt{background:none;color:var(--ink);border:1px solid var(--line)}
+section{padding:44px 0;border-top:1px solid var(--line)}
+h2{font-size:2rem;margin-bottom:22px;letter-spacing:-.02em}
+.meta{color:var(--muted);font-size:.95rem}
+/* demo */
+.demo{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;margin-top:8px}
+.demo h3{font-size:1.15rem}
+.grid{margin:16px 0;overflow-x:auto}
+.row{display:grid;grid-template-columns:110px repeat(8,minmax(44px,1fr));gap:3px;margin-bottom:3px;min-width:520px}
+.row b{font-weight:500;font-size:.85rem;align-self:center;color:var(--muted)}
+.cell{height:34px;border-radius:5px;background:var(--bg);border:1px solid var(--line);font-size:.7rem;display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap}
+.cell.h{background:none;border:0;height:auto;color:var(--muted)}
+.cell.busy{background:var(--accent);border-color:var(--accent);color:#fff}
+.cell.new{background:var(--ok);border-color:var(--ok);color:#fff}
+.reqs{display:flex;gap:10px;flex-wrap:wrap}
+.reqs button{background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 14px}
+.reqs button:hover{border-color:var(--accent)}
+#msg{margin-top:14px;padding:10px 14px;border-radius:8px;background:var(--bg);min-height:44px}
+#msg.ok{background:var(--okbg);color:var(--ok)}
+#msg.bad{background:var(--badbg);color:var(--bad)}
+/* lists */
+.item{margin-bottom:34px}
+.item h3{font-size:1.4rem}
+.item ul{padding-left:20px;margin:12px 0 0}
+.item li{margin-bottom:8px;max-width:72ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.tags span{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:2px 12px;font-size:.9rem}
+dl{margin:0;display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:12px 24px}
+dt{font-weight:700}dd{margin:0;color:var(--muted)}
+@media(max-width:600px){dl{grid-template-columns:1fr;gap:2px}dd{margin-bottom:12px}}
+footer{padding:40px 0 60px;border-top:1px solid var(--line)}
+footer a{font-size:1.2rem;font-weight:700}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main">
+  <div><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+  <button class="theme" id="theme" type="button">Switch theme</button>
+</nav>
+
+<header class="hero">
+  <h1>Darshan C S<span>Python Full Stack Developer</span></h1>
+  <p>I build web apps from database to browser with Python, Django, MySQL and React. I recently finished a full stack internship and shipped two projects of my own, and I'm looking for my first full stack developer role.</p>
+  <div class="cta"><a class="btn" href="#projects">See my projects</a><a class="btn alt" href="mailto:darshancs8055@gmail.com">Email me</a><a class="btn alt" href="https://github.com/Darshan2027" target="_blank" rel="noopener">GitHub</a><a class="btn alt" href="https://www.linkedin.com/in/csdarshan" target="_blank" rel="noopener">LinkedIn</a></div>
+</header>
+
+<section id="demo" aria-labelledby="dt">
+  <h2 id="dt">Try the conflict detector</h2>
+  <p class="meta" style="max-width:62ch;margin-top:-10px">A small version of the venue scheduling logic from my final year project. Request a slot and see whether it clashes.</p>
+  <div class="demo">
+    <h3>Venue schedule, today</h3>
+    <div class="grid" id="grid" role="table" aria-label="Venue schedule"></div>
+    <div class="reqs" id="reqs"></div>
+    <div id="msg" role="status" aria-live="polite">Pick a request above.</div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About</h2>
+  <p style="max-width:66ch">I'm an Information Science and Engineering graduate (2026, CGPA 8.5) from Sri Sri Sri Shivakumar Mahaswamy College of Engineering and Technology, Bengaluru. I like turning feature requirements into working REST APIs and responsive interfaces, and I learn new tools quickly. I speak English and Kannada fluently, and Hindi at an intermediate level.</p>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="item">
+    <h3>Python Full Stack Development Intern</h3>
+    <div class="meta">QSpiders (Test Yantra Software Solutions Pvt. Ltd.), Rajajinagar, Bengaluru. Feb 2026 to May 2026</div>
+    <ul>
+      <li>Built and shipped 2+ full stack modules (event workflow and food-ordering features) end to end with Python, Django and MySQL, under senior mentor review.</li>
+      <li>Turned feature requirements into Django models, views and templates, and tested each change before mentor sign-off.</li>
+      <li>Worked in a team of 4 to 6 using Git and GitHub, with code reviews and daily standups.</li>
+      <li>Debugged and resolved 15+ front-end and back-end integration issues across HTML, CSS and Django template rendering.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="item">
+    <h3>Smart Event Coordination and Tracking System</h3>
+    <div class="meta">Final year project</div>
+    <div class="tags"><span>Django</span><span>MySQL</span><span>JavaScript</span><span>HTML/CSS</span></div>
+    <ul>
+      <li>A full stack event management platform covering event creation, task assignment, resource allocation and automated notifications.</li>
+      <li>Conflict-detection algorithm for venue scheduling that prevented double-bookings across 15+ simulated concurrent events.</li>
+      <li>QR code and RFID attendance tracking, cutting check-in time per participant from minutes to seconds.</li>
+      <li>Django and MySQL backend with 5+ relational tables and a responsive front end.</li>
+    </ul>
+  </div>
+  <div class="item">
+    <h3>EcoEats: Voice Assistant Food Ordering App</h3>
+    <div class="meta">Internship project</div>
+    <div class="tags"><span>React</span><span>Django REST</span><span>MySQL</span><span>Python</span></div>
+    <ul>
+      <li>A food-ordering app with a React front end and Django REST backend for order placement and menu management.</li>
+      <li>8+ REST API endpoints for order creation, menu retrieval and status updates, on a normalized MySQL schema.</li>
+      <li>Browser-based voice recognition for hands-free ordering, with fewer steps than manual form entry.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <dl>
+    <dt>Languages</dt><dd>Python, object-oriented programming</dd>
+    <dt>Web</dt><dd>HTML, CSS, JavaScript, React, Bootstrap, Django</dd>
+    <dt>APIs and data</dt><dd>REST API design, MySQL, NumPy, Pandas, Matplotlib, Seaborn</dd>
+    <dt>Tools</dt><dd>Git, GitHub, VS Code, Excel</dd>
+    <dt>Working style</dt><dd>Leadership, communication, problem-solving, teamwork</dd>
+  </dl>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <p><b>B.E. Information Science and Engineering</b>, 2022 to 2026<br><span class="meta">Sri Sri Sri Shivakumar Mahaswamy College of Engineering and Technology, Bengaluru. CGPA 8.5</span></p>
+  <p><b>Pre-University Course, Science</b>, 2020 to 2022<br><span class="meta">Govt PU College, Kadur, Chikkamagaluru</span></p>
+</section>
+
+<footer id="contact">
+  <h2>Let's talk</h2>
+  <p><a href="mailto:darshancs8055@gmail.com">darshancs8055@gmail.com</a><br><a href="tel:+918088203362">8088203362</a><br><a href="https://www.linkedin.com/in/csdarshan" target="_blank" rel="noopener">LinkedIn</a> &nbsp; <a href="https://github.com/Darshan2027" target="_blank" rel="noopener">GitHub</a></p>
+  <p class="meta">Bengaluru, Karnataka</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  document.getElementById('theme').addEventListener('click',function(){
+    var dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+    root.dataset.theme=dark?'light':'dark';
+  });
+  var venues=['Main Hall','Seminar Room','Lab'];
+  var booked=[{v:0,s:9,e:11,n:'Orientation'},{v:1,s:10,e:13,n:'Workshop'},{v:2,s:14,e:16,n:'Hackathon'},{v:0,s:13,e:15,n:'Talk'}];
+  var reqs=[{v:0,s:10,e:12,n:'Quiz'},{v:1,s:13,e:15,n:'Demo day'},{v:2,s:9,e:11,n:'Coding club'}];
+  var grid=document.getElementById('grid'),msg=document.getElementById('msg'),box=document.getElementById('reqs');
+  function draw(extra){
+    var h='<div class="row"><b></b>';
+    for(var t=9;t<17;t++)h+='<div class="cell h">'+t+':00</div>';
+    h+='</div>';
+    venues.forEach(function(name,i){
+      h+='<div class="row"><b>'+name+'</b>';
+      for(var t=9;t<17;t++){
+        var b=booked.find(function(x){return x.v===i&&t>=x.s&&t<x.e});
+        var n=extra&&extra.v===i&&t>=extra.s&&t<extra.e;
+        h+='<div class="cell '+(b?'busy':n?'new':'')+'">'+(b&&t===b.s?b.n:n&&t===extra.s?extra.n:'')+'</div>';
+      }
+      h+='</div>';
+    });
+    grid.innerHTML=h;
+  }
+  reqs.forEach(function(r){
+    var btn=document.createElement('button');
+    btn.type='button';
+    btn.textContent=r.n+', '+venues[r.v]+', '+r.s+':00 to '+r.e+':00';
+    btn.onclick=function(){
+      var hit=booked.find(function(x){return x.v===r.v&&r.s<x.e&&x.s<r.e});
+      if(hit){
+        draw();
+        msg.className='bad';
+        msg.textContent='Conflict: '+r.n+' overlaps '+hit.n+' ('+hit.s+':00 to '+hit.e+':00) in the '+venues[r.v]+'. Booking blocked.';
+      }else{
+        draw(r);
+        msg.className='ok';
+        msg.textContent='No conflict. '+r.n+' can go ahead in the '+venues[r.v]+'.';
+      }
+    };
+    box.appendChild(btn);
+  });
+  draw();
+})();
+</script>
+</body>
+</html>
